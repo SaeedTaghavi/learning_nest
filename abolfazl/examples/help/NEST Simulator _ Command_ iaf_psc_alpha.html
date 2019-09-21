@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)http://www.nest-simulator.org/helpindex/cc/iaf_psc_alpha.html -->
+<html lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width">
+    <title>NEST Simulator | Command: iaf_psc_alpha</title>
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="http://www.nest-simulator.org/xmlrpc.php">
+    <!--[if lt IE 9]>
+    <script src="http://www.nest-simulator.org/assets/js/html5shiv.min.js" type="text/javascript"></script>
+    <![endif]-->
+    <link rel="stylesheet" id="blogsynthesis_jss_css-css" href="./NEST Simulator _ Command_ iaf_psc_alpha_files/jss-style.min.css" type="text/css" media="all">
+
+    <link rel="stylesheet" id="twentytwelve-fonts-css" href="./NEST Simulator _ Command_ iaf_psc_alpha_files/css" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentytwelve-ie-css' href='../assests/css/ie.css'
+          type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="./NEST Simulator _ Command_ iaf_psc_alpha_files/jquery-3.1.1.min.js"></script>
+    <!--<script type="text/javascript" src="http://www.nest-simulator.org/assets/js/jquery-migrate-3.0.0.js"></script>-->
+    <!--<script type="text/javascript" src="http://www.nest-simulator.org/assets/js/jss-script.min.js?ver=4.4"></script>-->
+
+    <script type="text/javascript" src="./NEST Simulator _ Command_ iaf_psc_alpha_files/jquery.mmenu.all.js"></script>
+    <link rel="stylesheet" id="parent-style-css" href="./NEST Simulator _ Command_ iaf_psc_alpha_files/jquery.mmenu.all.css" type="text/css" media="all">
+
+    <style>#responsive-menu .appendLink, #responsive-menu .responsive-menu li a, #responsive-menu #responsive-menu-title a,#responsive-menu .responsive-menu, #responsive-menu div, #responsive-menu .responsive-menu li, #responsive-menu{box-sizing: content-box !important;-moz-box-sizing: content-box !important;-webkit-box-sizing: content-box !important;-o-box-sizing: content-box !important}.RMPushOpen{width: 100% !important;overflow-x: hidden !important;height: 100% !important}.RMPushSlide{position: relative;left: 75%}#responsive-menu{position: absolute;width: 75%;left: -75%;top: 0px;background: #43494C;z-index: 9999;box-shadow: 0px 1px 8px #333333;font-size: 13px !important;max-width: 999px;display: none}#responsive-menu.admin-bar-showing{padding-top: 32px}#click-menu.admin-bar-showing{margin-top: 32px}#responsive-menu #rm-additional-content{padding: 10px 5% !important;width: 90% !important;color: #FFFFFF}#responsive-menu .appendLink{right: 0px !important;position: absolute !important;border: 1px solid #3C3C3C !important;padding: 12px 10px !important;color: #FFFFFF !important;background: #43494C !important;height: 20px !important;line-height: 20px !important;border-right: 0px !important}#responsive-menu .appendLink:hover{cursor: pointer;background: #3C3C3C !important;color: #FFFFFF !important}#responsive-menu .responsive-menu, #responsive-menu div, #responsive-menu .responsive-menu li,#responsive-menu{text-align: left !important}#responsive-menu .RMImage{vertical-align: middle;margin-right: 10px;display: inline-block}#responsive-menu.RMOpened{}#responsive-menu,#responsive-menu input{}#responsive-menu #responsive-menu-title{width: 95% !important;font-size: 14px !important;padding: 20px 0px 20px 5% !important;margin-left: 0px !important;background: #43494C !important;white-space: nowrap !important}#responsive-menu #responsive-menu-title,#responsive-menu #responsive-menu-title a{color: #FFFFFF !important;text-decoration: none !important;overflow: hidden !important}#responsive-menu #responsive-menu-title a:hover{color: #FFFFFF !important;text-decoration: none !important}#responsive-menu .appendLink,#responsive-menu .responsive-menu li a,#responsive-menu #responsive-menu-title a{transition: 1s all;-webkit-transition: 1s all;-moz-transition: 1s all;-o-transition: 1s all}#responsive-menu .responsive-menu{width: 100% !important;list-style-type: none !important;margin: 0px !important}#responsive-menu .responsive-menu li.current-menu-item > a,#responsive-menu .responsive-menu li.current-menu-item > .appendLink,#responsive-menu .responsive-menu li.current_page_item > a,#responsive-menu .responsive-menu li.current_page_item > .appendLink{background: #43494C !important;color: #FFFFFF !important}#responsive-menu .responsive-menu li.current-menu-item > a:hover,#responsive-menu .responsive-menu li.current-menu-item > .appendLink:hover,#responsive-menu .responsive-menu li.current_page_item > a:hover,#responsive-menu .responsive-menu li.current_page_item > .appendLink:hover{background: #43494C !important;color: #FFFFFF !important}#responsive-menu.responsive-menu ul{margin-left: 0px !important}#responsive-menu .responsive-menu li{list-style-type: none !important;position: relative !important}#responsive-menu .responsive-menu ul li:last-child{padding-bottom: 0px !important}#responsive-menu .responsive-menu li a{padding: 12px 0px 12px 5% !important;width: 95% !important;display: block !important;height: 20px !important;line-height: 20px !important;overflow: hidden !important;white-space: nowrap !important;color: #FFFFFF !important;border-top: 1px solid #3C3C3C !important;text-decoration: none !important}#click-menu{text-align: center;cursor: pointer;font-size: 13px !important;display: none;position: absolute;right: 5%;top: 60px;color: #FFFFFF;background: #000000;padding: 5px;z-index: 9999}#responsive-menu #responsiveSearch{display: block !important;width: 95% !important;padding-left: 5% !important;border-top: 1px solid #3C3C3C !important;clear: both !important;padding-top: 10px !important;padding-bottom: 10px !important;height: 40px !important;line-height: 40px !important}#responsive-menu #responsiveSearchSubmit{display: none !important}#responsive-menu #responsiveSearchInput{width: 91% !important;padding: 5px 0px 5px 3% !important;-webkit-appearance: none !important;border-radius: 2px !important;border: 1px solid #3C3C3C !important}#responsive-menu .responsive-menu,#responsive-menu div,#responsive-menu .responsive-menu li{width: 100% !important;margin-left: 0px !important;padding-left: 0px !important}#responsive-menu .responsive-menu li li a{padding-left: 10% !important;width: 90% !important;overflow: hidden !important}#responsive-menu .responsive-menu li li li a{padding-left: 15% !important;width: 85% !important;overflow: hidden !important}#responsive-menu .responsive-menu li li li li a{padding-left: 20% !important;width: 80% !important;overflow: hidden !important}#responsive-menu .responsive-menu li li li li li a{padding-left: 25% !important;width: 75% !important;overflow: hidden !important}#responsive-menu .responsive-menu li a:hover{background: #3C3C3C !important;color: #FFFFFF !important;list-style-type: none !important;text-decoration: none !important}#click-menu #RMX{display: none;font-size: 24px;line-height: 27px !important;height: 27px !important;color: #FFFFFF !important}#click-menu .threeLines{width: 33px !important;height: 27px !important;margin: auto !important}#click-menu .threeLines .line{height: 5px !important;margin-bottom: 6px !important;background: #FFFFFF !important;width: 100% !important}#click-menu .threeLines .line.last{margin-bottom: 0px !important}@media only screen and ( min-width : 0px ) and ( max-width : 600px ){#click-menu{display: block}}</style>
+    <!--wp code prettify-->
+    <link rel="stylesheet" type="text/css" href="./NEST Simulator _ Command_ iaf_psc_alpha_files/prettify.css">
+    <script type="text/javascript" src="./NEST Simulator _ Command_ iaf_psc_alpha_files/prettify.js"></script>
+
+    <link rel="stylesheet" id="parent-style-css" href="./NEST Simulator _ Command_ iaf_psc_alpha_files/style.css" type="text/css" media="all">
+    <!--<link type="text/css" rel="stylesheet" href="chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/content.css">-->
+<link id="prettify_css" type="text/css" rel="stylesheet" href="./NEST Simulator _ Command_ iaf_psc_alpha_files/prettify(1).css"><style id="prettify_custom" type="text/css">pre.prettyprint { margin: 5px; padding: 10px; max-height: 640px; overflow: auto; background-color: #f8f8f8;}</style><style>#cVim-command-bar, #cVim-command-bar-mode, #cVim-command-bar-input, #cVim-command-bar-search-results,
+.cVim-completion-item, .cVim-completion-item .cVim-full, .cVim-completion-item .cVim-left,
+.cVim-completion-item .cVim-right {
+  font-family: Helvetica, Helvetica Neue, Neue, sans-serif, monospace, Arial;
+  font-size: 10pt !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+#cVim-command-bar {
+  position: fixed;
+  z-index: 2147483646;
+  background-color: #1b1d1e;
+  color: #bbb;
+  display: none;
+  box-sizing: content-box;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.4);
+  left: 0;
+  width: 100%;
+  height: 20px;
+}
+
+#cVim-command-bar-mode {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  padding-left: 2px;
+  height: 100%;
+  width: 10px;
+  padding-top: 2px;
+  color: #888;
+}
+
+#cVim-command-bar-input {
+  background-color: #1b1d1e;
+  color: #bbb;
+  height: 100%;
+  right: 0;
+  top: 0;
+  width: calc(100% - 10px);
+  position: absolute;
+}
+
+#cVim-command-bar-search-results {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  z-index: 2147483647;
+  left: 0;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.4);
+  background-color: #1c1c1c;
+}
+
+.cVim-completion-item, .cVim-completion-item .cVim-full, .cVim-completion-item .cVim-left, .cVim-completion-item .cVim-right {
+  text-overflow: ellipsis;
+  padding: 1px;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: middle;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.cVim-completion-item:nth-child(even) {
+  background-color: #1f1f1f;
+}
+
+.cVim-completion-item {
+  width: 100%; left: 0;
+  color: #bcbcbc;
+}
+
+.cVim-completion-item[active] {
+  width: 100%; left: 0;
+  color: #1b1d1e;
+  background-color: #f1f1f1;
+}
+
+.cVim-completion-item[active] span {
+  color: #1b1d1e;
+}
+
+.cVim-completion-item .cVim-left {
+  color: #fff;
+  width: 37%;
+}
+
+.cVim-completion-item .cVim-right {
+  font-style: italic;
+  color: #888;
+  width: 57%;
+}
+
+
+#cVim-link-container, .cVim-link-hint,
+#cVim-hud, #cVim-status-bar {
+  font-family: Helvetica, Helvetica Neue, Neue, sans-serif, monospace, Arial;
+  font-size: 10pt !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+#cVim-link-container {
+  position: absolute;
+  pointer-events: none;
+  width: 100%; left: 0;
+  height: 100%; top: 0;
+  z-index: 2147483647;
+}
+
+.cVim-link-hint {
+  position: absolute;
+  color: #302505 !important;
+  background-color: #ffd76e !important;
+  border-radius: 2px !important;
+  padding: 2px !important;
+  font-size: 8pt !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  border: 1px solid #ad810c;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  text-align: center !important;
+  box-shadow: 2px 2px 1px rgba(0,0,0,0.25) !important;
+}
+
+.cVim-link-hint_match {
+  color: #777;
+  text-transform: uppercase !important;
+}
+
+
+#cVim-hud {
+  background-color: rgba(28,28,28,0.9);
+  position: fixed !important;
+  transition: right 0.2s ease-out;
+  z-index: 24724289;
+}
+
+#cVim-hud span {
+  padding: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  color: #8f8f8f;
+  font-size: 10pt;
+}
+
+#cVim-frames-outline {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 9999999999;
+  box-sizing: border-box;
+  border: 3px solid yellow;
+}
+</style></head>
+
+
+<body class="page page-id-12349 page-child parent-pageid-11070 page-template-default custom-font-enabled single-author">
+<div id="page" class="hfeed site">
+    <header id="masthead" class="site-header" role="banner">
+        <hgroup><h1 class="site-title">
+            <a href="http://www.nest-simulator.org/" title="NEST Simulator">
+                <img src="./NEST Simulator _ Command_ iaf_psc_alpha_files/nest_logo.png"></a>
+        </h1>
+        </hgroup>
+        <nav id="site-navigation" class="main-navigation" role="navigation"><h3 class="menu-toggle">Menu</h3>
+            <a class="assistive-text" href="http://www.nest-simulator.org/helpindex/cc/#content" title="Skip to content">Skip to content</a>
+
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                    <li id="menu-item-190" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-190"><a href="http://www.nest-simulator.org/">About NEST</a></li>
+                    <li id="menu-item-17907" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17907"><a href="http://www.nest-simulator.org/download/">Download</a></li>
+                    <li id="menu-item-277" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-277"><a href="http://www.nest-simulator.org/features/">Features</a></li>
+                    <li id="menu-item-192" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-192">
+                        <a href="http://www.nest-simulator.org/documentation/">Documentation</a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-200" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-200"><a href="http://www.nest-simulator.org/installation/">Installing NEST</a></li>
+                            <li id="menu-item-13428" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-13428">
+                                <a href="http://www.nest-simulator.org/introduction-to-pynest/">Introduction to
+                                    PyNEST</a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-17244" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17244">
+                                        <a href="http://www.nest-simulator.org/introduction-to-pynest/part-1-neurons-and-simple-neural-networks/">Part
+                                            1: Neurons and simple neural networks</a></li>
+                                    <li id="menu-item-17285" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17285">
+                                        <a href="http://www.nest-simulator.org/introduction-to-pynest/part-2-populations-of-neurons/">Part
+                                            2: Populations of neurons</a></li>
+                                    <li id="menu-item-17284" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17284">
+                                        <a href="http://www.nest-simulator.org/introduction-to-pynest/part-3-connecting-networks-with-synapses/">Part
+                                            3: Connecting networks with synapses</a></li>
+                                    <li id="menu-item-17283" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17283">
+                                        <a href="http://www.nest-simulator.org/introduction-to-pynest/part-4-topologically-structured-networks/">Part
+                                            4: Topologically structured networks</a></li>
+                                </ul>
+                            </li>
+                            <li id="menu-item-4360" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4360"><a href="http://www.nest-simulator.org/more-example-networks/">Example Networks</a>
+                            </li>
+                            <li id="menu-item-202" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-202"><a href="http://www.nest-simulator.org/frequently_asked_questions/">FAQ</a></li>
+                            <li id="menu-item-15822" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15822"><a href="http://nest.github.io/nest-simulator/">Developer Manual</a></li>
+                            <li id="menu-item-17852" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17852"><a href="http://www.nest-simulator.org/quickref/">NEST/SLI Quick Reference</a></li>
+                            <li id="menu-item-17853" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17853"><a href="http://www.nest-simulator.org/helpindex/">NEST Command Index</a></li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+                                        <a href="http://www.nest-simulator.org/pynest-api/">High-level API of PyNEST</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="menu-item-9055" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9055"><a href="http://www.nest-simulator.org/publications/">Publications</a></li>
+                    <li id="menu-item-278" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-278"><a href="http://www.nest-simulator.org/community/">Community</a></li>
+                </ul>
+            </div>
+            <div class="header-search"></div>
+        </nav><!-- #site-navigation --></header><!-- #masthead -->
+    <div id="main" class="wrapper">
+
+
+        <div id="primary" class="site-content">
+            <div id="content" role="main">
+
+
+                <article id="post-12349" class="post-12349 page type-page status-publish hentry">
+
+                    <header class="entry-header">
+                        <h1 class="entry-title">iaf_psc_alpha</h1>
+                    </header>
+                    <div class="entry-content">
+                        <div class="commandnav"><a href="http://www.nest-simulator.org/helpindex">Command Index</a> <a href="http://www.nest-simulator.org/quickref">NEST Quick Reference</a></div>
+                        <br>
+
+                        <!-- #################################################### -->
+                        <div class="wrap">
+
+
+    <!-- Begin -->
+    <b>Name:</b><pre>iaf_psc_alpha - Leaky integrate-and-fire neuron model.</pre>
+<b>Description: </b>
+<pre> <br>   <br>  iaf_psc_alpha is an implementation of a leaky integrate-and-fire model  <br>  with alpha-function shaped synaptic currents. Thus, synaptic currents  <br>  and the resulting post-synaptic potentials have a finite rise time.  <br>   <br>  The threshold crossing is followed by an absolute refractory period  <br>  during which the membrane potential is clamped to the resting potential.  <br>   <br>  The linear subthresold dynamics is integrated by the Exact  <br>  Integration scheme [1]. The neuron dynamics is solved on the time  <br>  grid given by the computation step size. Incoming as well as emitted  <br>  spikes are forced to that grid.  <br>   <br>  An additional state variable and the corresponding differential  <br>  equation represents a piecewise constant external current.  <br>   <br>  The general framework for the consistent formulation of systems with  <br>  neuron like dynamics interacting by point events is described in  <br>  [1].  A flow chart can be found in [2].  <br>   <br>  Critical tests for the formulation of the neuron model are the  <br>  comparisons of simulation results for different computation step  <br>  sizes. sli/testsuite/nest contains a number of such tests.  <br>   <br>  The iaf_psc_alpha is the standard model used to check the consistency  <br>  of the nest simulation kernel because it is at the same time complex  <br>  enough to exhibit non-trivial dynamics and simple enough compute  <br>  relevant measures analytically.  <br>   <br>  
+</pre>
+<b>Parameters: </b>
+<pre> <br>   <br>  The following parameters can be set in the status dictionary.  <br>   <br>  V_m	 double	- Membrane potential in mV  <br>  E_L	 double	- Resting membrane potential in mV.  <br>  C_m	 double	- Capacity of the membrane in pF  <br>  tau_m	 double	- Membrane time constant in ms.  <br>  t_ref	 double	- Duration of refractory period in ms.  <br>  V_th	 double	- Spike threshold in mV.  <br>  V_reset   double	- Reset potential of the membrane in mV.  <br>  tau_syn_ex double	- Rise time of the excitatory synaptic alpha function in ms.  <br>  tau_syn_in double	- Rise time of the inhibitory synaptic alpha function in ms.  <br>  I_e	 double	- Constant external input current in pA.  <br>  V_min	 double	- Absolute lower value for the membrane potential.  <br>   <br>  
+</pre>
+<b>Receives: </b>
+<pre>SpikeEvent, CurrentEvent, DataLoggingRequest  <br>  
+</pre>
+<b>Sends: </b>
+<pre>SpikeEvent  <br>   <br>  
+</pre>
+<b>Remarks: </b>
+<pre> <br>   <br>  If tau_m is very close to tau_syn_ex or tau_syn_in, the model  <br>  will numerically behave as if tau_m is equal to tau_syn_ex or  <br>  tau_syn_in, respectively, to avoid numerical instabilities.  <br>  For details, please see IAF_neurons_singularity.ipynb in  <br>  the NEST source code (docs/model_details).  <br>   <br>  
+</pre>
+<b>References: </b>
+<pre> <br>  [1] Rotter S &amp; Diesmann M (1999) Exact simulation of time-invariant linear  <br>  systems with applications to neuronal modeling. Biologial Cybernetics  <br>  81:381-402.  <br>  [2] Diesmann M, Gewaltig M-O, Rotter S, &amp; Aertsen A (2001) State space  <br>  analysis of synchronous spiking in cortical neural networks.  <br>  Neurocomputing 38-40:565-571.  <br>  [3] Morrison A, Straube S, Plesser H E, &amp; Diesmann M (2006) Exact subthreshold  <br>  integration with continuous spike times in discrete time neural network  <br>  simulations. Neural Computation, in press  <br>   <br>  
+</pre>
+<b>FirstVersion: </b>
+<pre>September 1999  <br>  Author:  Diesmann, Gewaltig  <br>  
+</pre>
+<b>SeeAlso: </b>
+<ul>
+    <li><a href="http://www.nest-simulator.org/helpindex/cc/iaf_psc_delta.html">iaf_psc_delta</a></li>
+    <li><a href="http://www.nest-simulator.org/helpindex/cc/iaf_psc_exp.html">iaf_psc_exp</a></li>
+    <li><a href="http://www.nest-simulator.org/helpindex/cc/iaf_cond_exp.html">iaf_cond_exp</a></li>
+</ul>
+<b>Source:</b><pre>/home/graber/work-nest/nest-git/nest-simulator/models/iaf_psc_alpha.h</pre>
+</div>
+    <!-- End -->
+
+                        </div> <!-- End wrap -->
+                        <!-- #################################################### -->
+
+
+                        <div class="commandnav"><a href="http://www.nest-simulator.org/helpindex">Command Index</a> <a href="http://www.nest-simulator.org/quickref">NEST Quick Reference</a></div>
+                    </article></div><!-- .entry-content -->
+
+                   <!-- .entry-meta -->
+                <!-- #post -->
+
+</div><!-- #content -->
+</div><!-- #primary -->
+
+
+<!--wp code prettify-->
+<script type="text/javascript">
+function $(id) {return !id ? null : document.getElementById(id);}
+
+loadPrettifyCss = function () {
+    if(!$('prettify_css')) {
+        css = document.createElement('link');
+        css.id = 'prettify_css';
+        css.type = 'text/css';
+        css.rel = 'stylesheet';
+        css.href = 'http://www.nest-simulator.org/wp-content/plugins/wp-code-prettify/css/prettify.css';
+        var headNode = document.getElementsByTagName("head")[0];
+        headNode.appendChild(css);
+    } else {
+        $('prettify_css').href = 'http://www.nest-simulator.org/wp-content/plugins/wp-code-prettify/css/prettify.css';
+    }
+
+    if(!$('prettify_custom')) {
+        css = document.createElement('style');
+        css.id = 'prettify_custom';
+        css.type = 'text/css';
+        css.rel = 'stylesheet';
+        css.innerHTML = 'pre.prettyprint { margin: 5px; padding: 10px; max-height: 640px; overflow: auto; background-color: #f8f8f8;}';
+        var headNode = document.getElementsByTagName("head")[0];
+        headNode.appendChild(css);
+    } else {
+        $('prettify_css').innerHTML = 'pre.prettyprint { margin: 5px; padding: 10px; max-height: 640px; overflow: auto; background-color: #f8f8f8;}';
+    }
+}
+
+</script>
+<script type="text/javascript">
+    loadPrettifyCss();
+
+</script>
+<script type="text/javascript" src="./NEST Simulator _ Command_ iaf_psc_alpha_files/prettify(2).js"></script>
+<script type="text/javascript">
+    function wpCodePrettifyOnLoad(func){
+        var wpCodePrettifyOldOnLoad = window.onload;
+        if (typeof window.onload != 'function') {
+            window.onload = func
+        } else {
+            window.onload = function () {
+                wpCodePrettifyOldOnLoad();
+                func()
+            }
+        }
+    }
+
+    wpCodePrettifyOnLoad(function(){prettyPrint();});
+
+</script><!--//wp code prettify--></div><!-- #main .wrapper -->
+<footer id="colophon" role="contentinfo">
+    <div class="site-info">
+        © 2018 by <a href="http://www.nest-initiative.org/" title="The NEST Initiative">The NEST Initiative</a>
+    </div><!-- .site-info -->
+
+    <nav id="second-site-navigation" class="main-navigation" role="navigation">
+        <div class="menu-second-menu-container">
+            <ul id="menu-second-menu" class="menu">
+                <li id="menu-item-188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-188"><a href="http://www.nest-simulator.org/contributors/">Contributors</a></li>
+                <li id="menu-item-189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-189"><a href="http://www.nest-simulator.org/impressum/">Impressum / Contact</a><a href="http://www.nest-simulator.org/data-protection/">&nbsp;/&nbsp;Data Protection</a></li>
+            </ul>
+        </div>
+    </nav><!-- #second site-navigation -->
+</footer>
+
+<!-- #colophon -->
+
+<!-- #page -->
+
+<a id="scroll-to-top" href="http://www.nest-simulator.org/helpindex/cc/iaf_psc_alpha.html#" title="Scroll to Top">Top</a>
+
+
+<script type="text/javascript" src="./NEST Simulator _ Command_ iaf_psc_alpha_files/smae.js"></script>
+<script type="text/javascript" src="./NEST Simulator _ Command_ iaf_psc_alpha_files/wp-embed.min.js"></script>
+<script type="text/javascript" id="slb_context">
+    /* <![CDATA[ */if ( !!window.jQuery ) {(function($){$(document).ready(function(){if ( !!window.SLB ) { {$.extend(SLB, {"context":["public","user_guest"]});} }})})(jQuery);}/* ]]> */
+</script>
+
+
+
+    
+
+</body><div id="cVim-status-bar" style="top: 0px;"></div><iframe src="./NEST Simulator _ Command_ iaf_psc_alpha_files/cmdline_frame.html" id="cVim-command-frame"></iframe></html>
